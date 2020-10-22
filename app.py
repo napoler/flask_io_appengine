@@ -1,6 +1,9 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
 from flask_socketio import SocketIO, emit
 from flask import Flask, render_template, request, json, Response, jsonify,escape
-from libs import *
+#from .libs import *
+#import libs
 import time
 
 app = Flask(__name__)
@@ -27,4 +30,4 @@ def demo(message):
 if __name__ == "__main__":
     # app.run()
     # socketio.run(app)
-    socketio.run(app, host="0.0.0.0", port=5000)
+    socketio.run(app, host="0.0.0.0", port=8080)
