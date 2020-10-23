@@ -1,5 +1,15 @@
 # flask websocket demo
 
+存储和检索 Datastore 实体
+https://cloud.google.com/appengine/docs/standard/python3/building-app/storing-and-retrieving-data?hl=zh_CN
+
+
+
+
+
+
+
+
 jquery
 
 socket.io

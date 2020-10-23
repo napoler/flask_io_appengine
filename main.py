@@ -5,7 +5,7 @@ from flask import Flask, render_template, request, json, Response, jsonify,escap
 #from .libs import *
 #import libs
 import time
-
+import jieba
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
@@ -13,7 +13,15 @@ socketio = SocketIO(app)
 @app.route('/')
 def index():
     return render_template("index.html")
+@app.route("/api/jieba")
+def  api_jieba():
+    jieba.enable_paddle()
+    seg_list = jieba.cut("他来到了网易杭研大厦")  # 默认是精确模式
 
+
+
+    data={"aa":list(seg_list)}
+    return jsonify(data)
 
 @socketio.on('demo', namespace='/tapi')
 def demo(message):
